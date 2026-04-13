@@ -1,25 +1,33 @@
-# API-INTEGRATION
-COMPANY: CODTECH IT SOLUTIONS
+# API Integration - Weather App 🌦️
 
-NAME :APEKSHA RAJU CHAVAN
+## 📌 Project Description
+This is a simple Weather App that demonstrates API Integration using JavaScript.  
+The application fetches real-time weather data from an external API and displays it for the city entered by the user.
 
-INTERN ID: CTIS5239
+## 🚀 Features
+- Get real-time weather data
+- Search weather by city name
+- Displays temperature, weather condition, and other details
+- Simple and user-friendly UI
 
-DOMAIN: FULL STACK WEB DEVELOPMENT
+## 🛠️ Technologies Used
+- HTML
+- CSS
+- JavaScript
+- REST API
 
-DURATION: 12 WEEEKS
+## ⚙️ How to Run
+1. Download or clone the repository
+2. Open `index.html` in your browser
+3. Enter city name and check weather
 
-MENTOR: NEELA SANTOSH KUMAR
+## 📷 Output
+The application shows weather details like temperature, humidity, and condition for the searched city.
 
-##DESCRIPTION    
-This project was developed as part of my Internship at CodeTech IT Solutions. The goal of this project is to demonstrate application integration techniques by connecting multiple services and enabling smooth communication between them.The project focuses on improving workflow automation, data synchronization, and seamless communication between different platforms.
-                The Weather App is an API integration project developed as part of my internship at CodeTech IT Solutions.
-This application fetches real-time weather data from an external API and displays weather information for any city entered by the user.The project demonstrates how applications communicate with external services using APIs and how data can be processed and displayed in a user-friendly interface.
+## 📚 Learning Outcome
+- Learned how to integrate APIs
+- Understood how HTTP requests work
+- Improved JavaScript and frontend skills
 
-
-
-
-##OUTPUT :
-
-
-[Weather App - Home op image.html](https://github.com/user-attachments/files/25860219/Weather.App.-.Home.op.image.html)
+## 👩‍💻 Author
+Pradnya Bhosale
