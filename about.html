@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - WeatherNow</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Background Gradient */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+/* Container */
+.about-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animated Title */
+.about-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Underline Effect */
+.about-title::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    background: white;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* Cards Section */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Individual Card */
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Title */
+@media (max-width: 600px) {
+    .about-title {
+        font-size: 32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🌦 WeatherNow</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="weather.html">Weather</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="about-container">
+
+    <h1 class="about-title">About This Project</h1>
+
+    <p>
+        WeatherNow is a responsive weather web application that provides 
+        real-time weather information for cities around the world.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌍 Live Weather Data</h3>
+            <p>
+                Fetches real-time weather data using the OpenWeatherMap API 
+                including temperature, humidity, and weather condition.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Dynamic UI</h3>
+            <p>
+                Background images change dynamically based on weather conditions 
+                like rain, clouds, snow, and clear sky.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📱 Responsive Design</h3>
+            <p>
+                Fully responsive layout built using HTML, CSS, and JavaScript 
+                that works on mobile, tablet, and desktop.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Technologies Used</h3>
+            <p>
+                HTML5, CSS3, JavaScript (Fetch API), and OpenWeatherMap API 
+                integration.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<footer class="about-footer">
+    <div class="footer-content">
+        <h3>WeatherNow 🌦</h3>
+        <p>Real-Time Weather Web Application</p>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/apeksha-chavan-115648328?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <p class="developer">
+            Developed with ❤️ by <span>Apeksha Chavan</span>
+        </p>
+
+        <p class="copyright">
+            © 2026 All Rights Reserved
+        </p>
+    </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+</body>
+</html>

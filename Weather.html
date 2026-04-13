@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Page</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Full screen background */
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.6s ease-in-out;
+}
+
+/* Weather Card Style */
+.weather-card {
+    margin: 100px auto;
+    padding: 30px;
+    width: 350px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Search Button Style */
+.weather-card button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+
+    /* Glow Blink Animation */
+    animation: glow 1.5s infinite;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ff7e5f; }
+    50% { box-shadow: 0 0 25px #ff512f; }
+    100% { box-shadow: 0 0 5px #ff7e5f; }
+}
+
+/* Hover Effect */
+.weather-card button:hover {
+    transform: scale(1.1);
+}
+
+</style>
+</head>
+
+<body id="weatherBody">
+
+<nav>
+    <h2>🌦 WeatherNow</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="weather.html">Weather</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="weather-card">
+    <h1>Search City Weather</h1>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Search</button>
+
+    <div class="result">
+        <h2 id="cityName"></h2>
+        <p id="temp"></p>
+        <p id="desc"></p>
+        <p id="humidity"></p>
+    </div>
+</div>
+
+<script>
+const apiKey = "350a2d6fc0941a9c18ac3988ca42f3f2";
+
+function setBackground(condition) {
+    const body = document.getElementById("weatherBody");
+    condition = condition.toLowerCase();
+
+    if(condition.includes("cloud"))
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1501630834273-4b5604d2ee31')";
+    else if(condition.includes("rain"))
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29')";
+    else if(condition.includes("clear"))
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b')";
+    else if(condition.includes("snow"))
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1608889175877-ae3c64d8d5b8')";
+    else
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63')";
+}
+
+function getWeather(){
+    const city = document.getElementById("city").value;
+
+    if(city === ""){
+        alert("Please enter city name");
+        return;
+    }
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
+    .then(response => {
+        if(!response.ok){
+            throw new Error("City not found or API issue");
+        }
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById("cityName").innerText = data.name + ", " + data.sys.country;
+        document.getElementById("temp").innerText = "🌡 Temperature: " + data.main.temp + "°C";
+        document.getElementById("desc").innerText = "🌥 Condition: " + data.weather[0].description;
+        document.getElementById("humidity").innerText = "💧 Humidity: " + data.main.humidity + "%";
+
+        setBackground(data.weather[0].description);
+    })
+    .catch(error => {
+        alert(error.message);
+        console.log(error);
+    });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App - Home</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Small improvements for attractive button */
+
+.hero {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: white;
+}
+
+.hero p {
+    margin: 20px 0;
+    color: white;
+    font-size: 18px;
+}
+
+/* Attractive Button */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+}
+</style>
+
+</head>
+
+<body class="home-bg">
+
+<nav>
+    <h2>🌦 WeatherNow</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="weather.html">Weather</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Check Live Weather Updates</h1>
+    <p>Get real-time weather information for any city in the world.</p>
+    <a href="weather.html" class="btn">Check Weather ☀️</a>
+</section>
+
+</body>
+</html>
